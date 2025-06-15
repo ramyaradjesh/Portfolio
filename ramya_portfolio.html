@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramya Radjesh - Cybersecurity Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .company-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .experience-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 4px solid #764ba2;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .institution {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-skills {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .glass-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>RAMYA RADJESH</h1>
+                <p class="subtitle">Aspiring Cybersecurity Engineer | Android Security Specialist</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Paris, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>ramyaradjesh1@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+33 7 45 70 05 98</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="glass-card">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                Passionate cybersecurity engineer with expertise in mobile and credential security. I specialize in Android development, credential risk detection, and building secure, user-friendly applications. My experience includes working with cutting-edge technologies like eBPF for mobile security, developing malware detection frameworks, and creating robust security solutions. I'm committed to building secure, scalable networks and enhancing system performance through innovative security practices.
+            </p>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="glass-card">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Android Security Developer - Security Policy</div>
+                    <div class="company-info">Orange | Paris | Data Privacy and Innovation Team</div>
+                </div>
+                <ul class="experience-list">
+                    <li>Researched eBPF integration in Android mobile security, analyzing performance and security use cases with OS compatibility assessment</li>
+                    <li>Identified patterns of eBPF operation across Android OS for enhanced credential risk detection</li>
+                    <li>Designed and implemented BPFroid prototype - a mobile malware detection framework</li>
+                    <li>Explored proof-of-concept approaches to detect and mitigate credential-based threats</li>
+                    <li>Applied expertise in mobile development, system-level Android security, and comprehensive risk assessment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="glass-card">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="degree">Master of Science in Computer Security</div>
+                    <div class="institution">EPITA (École Pour l'Informatique et les Techniques Avancées)</div>
+                    <div class="duration">September 2022 – March 2024</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor's in Computer Science Engineering</div>
+                    <div class="institution">Sri Manakula Vinayagar Engineering College</div>
+                    <div class="duration">August 2018 – April 2022</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="glass-card">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">PASSWORD CRACKING TOOL</div>
+                    <div class="project-description">
+                        Created a distributed password-cracking system simulating real-world credential threats. Master's project demonstrating advanced security research capabilities.
+                    </div>
+                    <div class="project-skills">
+                        Skills: Kubernetes & Docker Containers, Bcrypt Hashing, Multiprocessing, Python
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">WEB APPLICATION SECURITY AUDIT</div>
+                    <div class="project-description">
+                        Comprehensive security assessment focusing on vulnerability identification and severity determination using Common Vulnerability Enumeration (CWE) standards.
+                    </div>
+                    <div class="project-skills">
+                        Skills: Vulnerability Assessment, CWE Analysis, Security Auditing
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">SOFTWARE AND DATABASE SECURITY</div>
+                    <div class="project-description">
+                        Advanced vulnerability analysis in software and database systems using CWE methodology, with accurate risk and severity scoring using industry standards.
+                    </div>
+                    <div class="project-skills">
+                        Skills: CVSS, CWE, Software Investigation, Risk Assessment
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">PASSWORD MANAGER TOOL</div>
+                    <div class="project-description">
+                        Developed a secure password manager with advanced encryption, salt-based hashing, and Fernet library implementation for maximum security.
+                    </div>
+                    <div class="project-skills">
+                        Skills: Cryptography, Fernet Library, Secure Storage
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="glass-card">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Security Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Network Traffic Analysis</span>
+                        <span class="skill-tag">Vulnerability Assessment</span>
+                        <span class="skill-tag">Linux Security</span>
+                        <span class="skill-tag">Threat Detection</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Security Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OWASP</span>
+                        <span class="skill-tag">CWE Analysis</span>
+                        <span class="skill-tag">eBPF</span>
+                        <span class="skill-tag">Password Hashing (bcrypt)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux (Kali)</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">Android Security Research</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Linux Scripting</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Secure Code Mindset</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CCNA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Let's connect and build secure digital solutions together!</p>
+            <a href="mailto:ramyaradjesh1@gmail.com" class="cta-button">Get In Touch</a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill tags on hover
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add loading animation to cards
+            const cards = document.querySelectorAll('.glass-card, .project-card, .education-item, .skill-category');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
